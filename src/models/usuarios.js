@@ -61,4 +61,4 @@ usuarioSchema.methods.comparePassword = function (clave1, cb) {
   };
   
 const Usuario = mongoose.model('Usuario', usuarioSchema)
-export default Usuario
+export default Usuario;
