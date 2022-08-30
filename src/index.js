@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import './database'
 
 import usuariosRoute from './routes/usuarios.route'
+import loginRoute from './routes/login.route'
 
 const app = express()
 //Setting
@@ -23,4 +24,5 @@ app.use(morgan("dev"));
 
 // Routes
 app.use('/usuarios', usuariosRoute)
+app.use('/auth', loginRoute)
 
