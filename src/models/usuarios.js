@@ -6,12 +6,14 @@ const usuarioSchema = new Schema({
         type: String,
         trim: true,
         required: true,
+        minlength: 4,
         maxlength: 60,
       },
       apellido: {
         type: String,
         trim: true,
         required: true,
+        minlength: 3,
         maxlength: 60,
       },
       edad: {
