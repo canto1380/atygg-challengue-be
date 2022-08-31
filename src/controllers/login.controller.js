@@ -1,6 +1,6 @@
 import Usuario from "../models/usuarios";
 import bcrypt from 'bcrypt'
-// import jwt from 'jsonwebtoken'
+import jwt from 'jsonwebtoken'
 
 const login = async (req, res, next) => {
   try {
@@ -10,15 +10,17 @@ const login = async (req, res, next) => {
       res
       .status(400)
       .json({ Mensaje: "El usuario no se encuentra registrado" });
+      return
     }
     const validaClave = await bcrypt.compare(clave, validaUsuario.clave);
     if (!validaClave) {
       res.status(400).json({ Mensaje: "La clave ingresada es incorrecta" });
+      return
     }
-    // const generaToken = encrypt(validaUsuario.id);
+    const generaToken = encrypt(validaUsuario.id);
     const { nombre, apellido } = validaUsuario;
     res.status(200).json({ 
-      // generaToken,
+      generaToken,
       usuario: {nombre, apellido, email }
     })
     
