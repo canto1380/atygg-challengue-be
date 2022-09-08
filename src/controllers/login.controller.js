@@ -9,7 +9,7 @@ const login = async (req, res, next) => {
     if (!validaUsuario) {
       return res
       .status(400)
-      .json({ Mensaje: "El usuario no se encuentra registrado" });
+      .json({ Mensaje: "El usuario no se encuentra registrado!" });
       
     }
     const validaClave = await bcrypt.compare(clave, validaUsuario.clave);
