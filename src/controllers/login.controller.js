@@ -7,10 +7,10 @@ const login = async (req, res, next) => {
     const { email, clave } = req.body;
     const validaUsuario = await Usuario.findOne({ email });
     if (!validaUsuario) {
-      res
+      return res
       .status(400)
       .json({ Mensaje: "El usuario no se encuentra registrado" });
-      return
+      
     }
     const validaClave = await bcrypt.compare(clave, validaUsuario.clave);
     if (!validaClave) {
@@ -19,10 +19,11 @@ const login = async (req, res, next) => {
     }
     const generaToken = encrypt(validaUsuario.id);
     const { nombre, apellido } = validaUsuario;
-    res.status(200).json({ 
+    res.status(201).json({ 
       generaToken,
       usuario: {nombre, apellido, email }
     })
+    
     
   } catch (error) {
     res.status(500).json({ Mensaje: error })
