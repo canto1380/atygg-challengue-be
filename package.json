@@ -11,7 +11,6 @@
   "author": "Alejandro Penalba",
   "license": "ISC",
   "dependencies": {
-    "babel": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
