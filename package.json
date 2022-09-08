@@ -11,6 +11,8 @@
   "author": "Alejandro Penalba",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.0",
     "@babel/node": "^7.18.10",
     "@babel/preset-env": "^7.19.0",
     "bcrypt": "^5.0.1",
@@ -23,9 +25,5 @@
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.19"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.18.10",
-    "@babel/core": "^7.19.0"
   }
 }
